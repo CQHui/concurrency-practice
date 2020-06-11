@@ -18,22 +18,24 @@ public class Memoizer4<A, V> implements Computable<A, V> {
     @Override
     public V compute(A arg) throws InterruptedException, ExecutionException {
         Future<V> vFuture = cache.get(arg);
-        if (vFuture == null) {
-            Callable<V> eval = () -> c.compute(arg);
-            FutureTask<V> ft = new FutureTask<>(eval);
-            vFuture = cache.putIfAbsent(arg, ft);
+        while (true) {
             if (vFuture == null) {
-                vFuture = ft;
-                ft.run();
+                Callable<V> eval = () -> c.compute(arg);
+                FutureTask<V> ft = new FutureTask<>(eval);
+                vFuture = cache.putIfAbsent(arg, ft);
+                if (vFuture == null) {
+                    vFuture = ft;
+                    ft.run();
+                }
             }
-        }
-        try {
-            return vFuture.get();
-        } catch (CancellationException e) {
-            cache.remove(arg, vFuture);
-            throw e;
-        } catch (ExecutionException e) {
-            throw e;
+            try {
+                return vFuture.get();
+            } catch (CancellationException e) {
+                cache.remove(arg, vFuture);
+                throw e;
+            } catch (ExecutionException e) {
+                throw e;
+            }
         }
     }
 }
