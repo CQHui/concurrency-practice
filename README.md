@@ -10,3 +10,6 @@ I will post the code case here after completing a chapter.
 - [x] 2. Thread Safety
 - [x] 3. Sharing Objects
 - [x] 4. Composing Objects
+- [x] 5. Building Blocks
+- [x] 6. Task Execution
+- [x] 7. Cancellation and Shutdown
