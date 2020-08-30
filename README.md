@@ -17,3 +17,4 @@ I will post the code case here after completing a chapter.
 - [x] 9. GUI Applications(SKIP)
 - [x] 10. Avoiding Liveness Hazards
 - [x] 11. Performance and Scalability
+- [x] 12. Testing Concurrent Programs
