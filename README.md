@@ -18,3 +18,5 @@ I will post the code case here after completing a chapter.
 - [x] 10. Avoiding Liveness Hazards
 - [x] 11. Performance and Scalability
 - [x] 12. Testing Concurrent Programs
+- [x] 13. Explicit Locks
+- [x] 14. Building Custom Synchronizers
