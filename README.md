@@ -20,3 +20,5 @@ I will post the code case here after completing a chapter.
 - [x] 12. Testing Concurrent Programs
 - [x] 13. Explicit Locks
 - [x] 14. Building Custom Synchronizers
+- [x] 15. Nonblocking Synchronization
+- [x] 16. The Java Memory Model(no code)
