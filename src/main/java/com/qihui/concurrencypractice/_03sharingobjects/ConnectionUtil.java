@@ -26,12 +26,4 @@ public class ConnectionUtil {
         return connectionHolder.get();
     }
 
-    public static void main(String[] args) {
-        HashMap<Integer, Object> map = new HashMap<>(4);
-        for (int i = 0; i < 9; i = i + 4) {
-            map.put(i, i);
-        }
-        map.put(11, 11);
-        System.out.println(map.get(5));
-    }
 }

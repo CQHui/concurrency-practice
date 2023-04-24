@@ -1,7 +1,5 @@
 package com.qihui.concurrencypractice._03sharingobjects;
 
-import sun.jvm.hotspot.utilities.AssertionFailure;
-
 /**
  * class at risk of failure if not properly published
  */
@@ -14,7 +12,7 @@ public class Holder {
 
     public void assertSanity() {
         if (n != n) {
-            throw new AssertionFailure("This statement is false");
+            throw new RuntimeException("This statement is false");
         }
     }
 }
